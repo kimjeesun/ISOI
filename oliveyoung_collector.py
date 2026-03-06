@@ -73,8 +73,12 @@ def parse_ranking_html(html: str) -> list:
     items = []
     for info in prd_infos[:TOP_N]:
         try:
-            rank_el   = info.select_one(".thumb_flag")
-            rank      = int(rank_el.get_text(strip=True)) if rank_el else len(items) + 1
+            rank_el  = info.select_one(".thumb_flag")
+            rank_txt = rank_el.get_text(strip=True) if rank_el else ""
+            try:
+                rank = int(rank_txt)
+            except ValueError:
+                rank = len(items) + 1  # '베스트' 등 숫자 아닌 텍스트면 순서대로 부여
             brand_el  = info.select_one(".tx_brand")
             name_el   = info.select_one(".tx_name")
             brand     = brand_el.get_text(strip=True) if brand_el else ""
@@ -215,7 +219,7 @@ def main():
             GAS_WEB_APP_URL,
             json={"secret": SECRET, "dateStr": date_str, "timeStr": time_str,
                   "rows": all_rows, "viewerRows": viewer_rows},
-            timeout=60,
+            timeout=120,
         )
         result = resp.json()
         if result.get("ok"):
