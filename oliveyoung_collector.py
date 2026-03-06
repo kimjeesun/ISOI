@@ -16,8 +16,12 @@ SECRET          = os.environ.get("SECRET", "oliveyoung_secret_2026")
 
 CATEGORIES = [
     {
-        "name":   "전체TOP100",
-        "url":    "https://www.oliveyoung.co.kr/store/main/getBestList.do?dispCatNo=900000100100001&fltDispCatNo=&pageIdx=0&rowsPerPage=0",
+        "name":   "잡티세럼",
+        "url":    "https://www.oliveyoung.co.kr/store/search/getSearchMain.do?query=%EC%9E%A1%ED%8B%B0%EC%84%B8%EB%9F%BC",
+    },
+    {
+        "name":   "흔적세럼",
+        "url":    "https://www.oliveyoung.co.kr/store/search/getSearchMain.do?query=%ED%9D%94%EC%A0%81%EC%84%B8%EB%9F%BC",
     },
     {
         "name":   "스킨케어",
@@ -27,12 +31,16 @@ CATEGORIES = [
 
 VIEWER_PRODUCTS = [
     {
-        "name": "[화잘먹] 구달 맑은 어성초 진정 수분 선크림 50ml 1+1 기획 (+25ml 미니어처)",
-        "url":  "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000219553",
+        "name": "[로즈PDRN] 아이소이 브라이트닝 잡티세럼 40ml 대용량 기획",
+        "url":  "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000235243",
     },
     {
-        "name": "[진정커버] 구달 어성초 진정 블레미쉬 커버 선비비 뉴트럴 베이지 50ml 기획 (+25ml)",
-        "url":  "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000248065",
+        "name": "[로즈PDRN/잡티흔적] 아이소이 브라이트닝 잡티세럼 20ml 더블세트(20ml+20ml)",
+        "url":  "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000234908",
+    },
+    {
+        "name": "[NEW/트러블 흔적세럼] 아이소이 브라이트닝 카밍 스팟 세럼 35ml 기획 (+10ml)",
+        "url":  "https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo=A000000247691",
     },
 ]
 
