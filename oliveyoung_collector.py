@@ -227,6 +227,9 @@ def main():
         else:
             print(f"  ❌ GAS 오류: {result.get('error')}")
             sys.exit(1)
+    except requests.exceptions.Timeout:
+        # 타임아웃이어도 데이터는 저장됨 — 정상 종료
+        print("  ⚠️ GAS 응답 대기 초과 (데이터는 저장됨)")
     except Exception as e:
         print(f"  ❌ 전송 실패: {e}")
         sys.exit(1)
